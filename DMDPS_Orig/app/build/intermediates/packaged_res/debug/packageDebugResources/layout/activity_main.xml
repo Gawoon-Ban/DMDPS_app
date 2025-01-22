@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:text="@string/upload_button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraTextureView" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:text="@string/status_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+
+    <TextureView
+        android:id="@+id/cameraTextureView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Switch
+        android:id="@+id/RAWswitch"
+        android:layout_width="148dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="120dp"
+        android:text="@string/RAWswitch_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+
+    <TextView
+        android:id="@+id/CurrentVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="촬영 주기 : 2.0s"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/optionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RAWswitch" />
+
+    <SeekBar
+        android:id="@+id/optionBar"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="40dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RAWswitch" />
+
+    <View
+        android:id="@+id/blackview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/image_description"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Switch
+        android:id="@+id/Presetswitch"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="40dp"
+        android:text="Use Preset"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionBar" />
+
+    <Button
+        android:id="@+id/nextOption"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/arrow1"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/CurrentVal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/CurrentVal"
+        app:layout_constraintTop_toTopOf="@+id/CurrentVal" />
+
+    <Button
+        android:id="@+id/prevOption"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/arrow0"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/CurrentVal"
+        app:layout_constraintEnd_toStartOf="@+id/CurrentVal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CurrentVal" />
+
+    <EditText
+        android:id="@+id/presetText"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:hint="ex) 0.05, 0.5, 5, 50 (ms)"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RAWswitch"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <Button
+        android:id="@+id/minusOption"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/opt0"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/CurrentVal"
+        app:layout_constraintEnd_toStartOf="@+id/CurrentVal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CurrentVal" />
+
+    <Button
+        android:id="@+id/plusOption"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/opt1"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/CurrentVal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/CurrentVal"
+        app:layout_constraintTop_toTopOf="@+id/CurrentVal" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
