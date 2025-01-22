@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DDPS</string>
+    <string name="upload_button">Upload Images</string>
+    <string name="status_text">Status: Ready</string>
+    <string name="status_text2">Status: All Images are processed</string>
+    <string name="image_description">Displayed Image</string>
+    <string name="RAWswitch_name">RAW 타입 출력</string>
+    <string name="slider_text">카메라 옵션 조절</string>
+
+</resources>
